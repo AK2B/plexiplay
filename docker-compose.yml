@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
-    command: --init-file /docker-entrypoint-initdb.d/init.sql
+    command: --explicit_defaults_for_timestamp --tls-version=TLSv1.2 --init-file /docker-entrypoint-initdb.d/init.sql
 
   wordpress:
     depends_on:
